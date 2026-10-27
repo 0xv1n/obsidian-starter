@@ -1,0 +1,217 @@
+{
+  "filters": {
+    "and": [
+      "file.ext == \"md\"",
+      "note.type == \"meeting\"",
+      "!file.inFolder(\"90 System\")"
+    ]
+  },
+  "formulas": {
+    "month": "if(note.date, note.date.format(\"YYYY-MM\"), \"Undated\")"
+  },
+  "properties": {
+    "file.name": {
+      "displayName": "Meeting"
+    },
+    "note.date": {
+      "displayName": "Date"
+    },
+    "note.time": {
+      "displayName": "Time"
+    },
+    "note.kind": {
+      "displayName": "Kind"
+    },
+    "note.project": {
+      "displayName": "Project"
+    },
+    "note.attendees": {
+      "displayName": "Attendees"
+    },
+    "note.tags": {
+      "displayName": "Tags"
+    },
+    "formula.month": {
+      "displayName": "Month"
+    }
+  },
+  "views": [
+    {
+      "type": "table",
+      "name": "Latest 10",
+      "order": [
+        "file.name",
+        "note.date",
+        "note.time",
+        "note.kind",
+        "note.project",
+        "note.attendees",
+        "note.tags"
+      ],
+      "sort": [
+        {
+          "property": "note.date",
+          "direction": "DESC"
+        },
+        {
+          "property": "note.time",
+          "direction": "DESC"
+        },
+        {
+          "property": "file.name",
+          "direction": "DESC"
+        }
+      ],
+      "limit": 10,
+      "filters": "note.date && note.date <= today()"
+    },
+    {
+      "type": "table",
+      "name": "This month",
+      "order": [
+        "file.name",
+        "note.date",
+        "note.time",
+        "note.kind",
+        "note.project",
+        "note.attendees",
+        "note.tags"
+      ],
+      "sort": [
+        {
+          "property": "note.date",
+          "direction": "DESC"
+        },
+        {
+          "property": "note.time",
+          "direction": "DESC"
+        },
+        {
+          "property": "file.name",
+          "direction": "DESC"
+        }
+      ],
+      "filters": "note.date && note.date.format(\"YYYY-MM\") == today().format(\"YYYY-MM\")"
+    },
+    {
+      "type": "table",
+      "name": "By month",
+      "order": [
+        "file.name",
+        "note.date",
+        "note.time",
+        "note.kind",
+        "note.project",
+        "note.attendees",
+        "note.tags"
+      ],
+      "sort": [
+        {
+          "property": "note.date",
+          "direction": "DESC"
+        },
+        {
+          "property": "note.time",
+          "direction": "DESC"
+        },
+        {
+          "property": "file.name",
+          "direction": "DESC"
+        }
+      ],
+      "groupBy": {
+        "property": "formula.month",
+        "direction": "DESC"
+      }
+    },
+    {
+      "type": "table",
+      "name": "By kind",
+      "order": [
+        "file.name",
+        "note.date",
+        "note.time",
+        "note.kind",
+        "note.project",
+        "note.attendees",
+        "note.tags"
+      ],
+      "sort": [
+        {
+          "property": "note.date",
+          "direction": "DESC"
+        },
+        {
+          "property": "note.time",
+          "direction": "DESC"
+        },
+        {
+          "property": "file.name",
+          "direction": "DESC"
+        }
+      ],
+      "groupBy": {
+        "property": "note.kind",
+        "direction": "ASC"
+      }
+    },
+    {
+      "type": "table",
+      "name": "By project",
+      "order": [
+        "file.name",
+        "note.date",
+        "note.time",
+        "note.kind",
+        "note.project",
+        "note.attendees",
+        "note.tags"
+      ],
+      "sort": [
+        {
+          "property": "note.date",
+          "direction": "DESC"
+        },
+        {
+          "property": "note.time",
+          "direction": "DESC"
+        },
+        {
+          "property": "file.name",
+          "direction": "DESC"
+        }
+      ],
+      "groupBy": {
+        "property": "note.project",
+        "direction": "ASC"
+      }
+    },
+    {
+      "type": "table",
+      "name": "All meetings",
+      "order": [
+        "file.name",
+        "note.date",
+        "note.time",
+        "note.kind",
+        "note.project",
+        "note.attendees",
+        "note.tags"
+      ],
+      "sort": [
+        {
+          "property": "note.date",
+          "direction": "DESC"
+        },
+        {
+          "property": "note.time",
+          "direction": "DESC"
+        },
+        {
+          "property": "file.name",
+          "direction": "DESC"
+        }
+      ]
+    }
+  ]
+}

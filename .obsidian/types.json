@@ -1,0 +1,21 @@
+{
+  "types": {
+    "type": "text",
+    "date": "date",
+    "time": "text",
+    "year": "text",
+    "due": "date",
+    "completed": "date",
+    "status": "text",
+    "kind": "text",
+    "area": "text",
+    "project": "text",
+    "attendees": "multitext",
+    "tags": "tags",
+    "cssclasses": "multitext",
+    "aliases": "aliases",
+    "source": "text",
+    "next": "text",
+    "waiting_on": "text"
+  }
+}

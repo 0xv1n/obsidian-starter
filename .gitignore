@@ -1,0 +1,21 @@
+# Local Obsidian session and device state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspaces.json
+.obsidian/graph.json
+.obsidian/cache/
+.obsidian/plugins/
+.obsidian/themes/
+.obsidian/sync.json
+.obsidian/publish.json
+.trash/
+
+# Private planning and local credentials
+.planning/
+.env
+.env.*
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "type": "file",
+      "path": "Home.md",
+      "title": "Home"
+    },
+    {
+      "type": "file",
+      "path": "Follow-ups.md",
+      "title": "Follow-ups"
+    },
+    {
+      "type": "file",
+      "path": "Meetings.md",
+      "title": "Meetings"
+    },
+    {
+      "type": "file",
+      "path": "00 Inbox/Inbox.md",
+      "title": "Inbox"
+    },
+    {
+      "type": "file",
+      "path": "01 Projects/Projects.md",
+      "title": "Projects"
+    }
+  ]
+}

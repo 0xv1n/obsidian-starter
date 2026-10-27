@@ -1,0 +1,65 @@
+{
+  "filters": {
+    "and": [
+      "file.ext == \"md\"",
+      "note.type == \"meeting\"",
+      "!file.inFolder(\"90 System\")",
+      "note.project == this.file.asLink()"
+    ]
+  },
+  "properties": {
+    "file.name": {
+      "displayName": "Meeting"
+    },
+    "note.date": {
+      "displayName": "Date"
+    },
+    "note.time": {
+      "displayName": "Time"
+    },
+    "note.kind": {
+      "displayName": "Kind"
+    },
+    "note.project": {
+      "displayName": "Project"
+    },
+    "note.attendees": {
+      "displayName": "Attendees"
+    },
+    "note.tags": {
+      "displayName": "Tags"
+    },
+    "formula.month": {
+      "displayName": "Month"
+    }
+  },
+  "views": [
+    {
+      "type": "table",
+      "name": "Meetings",
+      "order": [
+        "file.name",
+        "note.date",
+        "note.time",
+        "note.kind",
+        "note.project",
+        "note.attendees",
+        "note.tags"
+      ],
+      "sort": [
+        {
+          "property": "note.date",
+          "direction": "DESC"
+        },
+        {
+          "property": "note.time",
+          "direction": "DESC"
+        },
+        {
+          "property": "file.name",
+          "direction": "DESC"
+        }
+      ]
+    }
+  ]
+}

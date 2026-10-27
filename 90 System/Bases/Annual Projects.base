@@ -1,0 +1,52 @@
+{
+  "filters": {
+    "and": [
+      "file.ext == \"md\"",
+      "note.type == \"project\"",
+      "!file.inFolder(\"90 System\")",
+      "note.status == \"done\"",
+      "note.completed && note.completed.format(\"YYYY\") == this.year"
+    ]
+  },
+  "properties": {
+    "file.name": {
+      "displayName": "Project"
+    },
+    "note.status": {
+      "displayName": "Status"
+    },
+    "note.next": {
+      "displayName": "Next step"
+    },
+    "note.waiting_on": {
+      "displayName": "Waiting on"
+    },
+    "note.due": {
+      "displayName": "Due"
+    },
+    "note.area": {
+      "displayName": "Area"
+    },
+    "note.completed": {
+      "displayName": "Completed"
+    }
+  },
+  "views": [
+    {
+      "type": "table",
+      "name": "Completed in review year",
+      "order": [
+        "file.name",
+        "note.kind",
+        "note.area",
+        "note.completed"
+      ],
+      "sort": [
+        {
+          "property": "note.completed",
+          "direction": "ASC"
+        }
+      ]
+    }
+  ]
+}

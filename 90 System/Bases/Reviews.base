@@ -1,0 +1,25 @@
+{
+  "filters": {
+    "and": [
+      "file.ext == \"md\"",
+      "note.type == \"annual-review\"",
+      "!file.inFolder(\"90 System\")"
+    ]
+  },
+  "views": [
+    {
+      "type": "table",
+      "name": "Annual reviews",
+      "order": [
+        "file.name",
+        "note.year"
+      ],
+      "sort": [
+        {
+          "property": "note.year",
+          "direction": "DESC"
+        }
+      ]
+    }
+  ]
+}

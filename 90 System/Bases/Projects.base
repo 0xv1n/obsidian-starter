@@ -1,0 +1,122 @@
+{
+  "filters": {
+    "and": [
+      "file.ext == \"md\"",
+      "note.type == \"project\"",
+      "!file.inFolder(\"90 System\")"
+    ]
+  },
+  "properties": {
+    "file.name": {
+      "displayName": "Project"
+    },
+    "note.status": {
+      "displayName": "Status"
+    },
+    "note.next": {
+      "displayName": "Next step"
+    },
+    "note.waiting_on": {
+      "displayName": "Waiting on"
+    },
+    "note.due": {
+      "displayName": "Due"
+    },
+    "note.area": {
+      "displayName": "Area"
+    },
+    "note.completed": {
+      "displayName": "Completed"
+    }
+  },
+  "views": [
+    {
+      "type": "table",
+      "name": "Active",
+      "filters": "note.status == \"active\"",
+      "order": [
+        "file.name",
+        "note.next",
+        "note.waiting_on",
+        "note.due",
+        "note.area"
+      ],
+      "sort": [
+        {
+          "property": "note.due",
+          "direction": "ASC"
+        },
+        {
+          "property": "file.name",
+          "direction": "ASC"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Waiting",
+      "filters": "note.status == \"waiting\"",
+      "order": [
+        "file.name",
+        "note.next",
+        "note.waiting_on",
+        "note.due",
+        "note.area"
+      ],
+      "sort": [
+        {
+          "property": "note.due",
+          "direction": "ASC"
+        },
+        {
+          "property": "file.name",
+          "direction": "ASC"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Deadlines",
+      "filters": "note.status != \"done\" && note.due",
+      "order": [
+        "file.name",
+        "note.due",
+        "note.status",
+        "note.next"
+      ],
+      "sort": [
+        {
+          "property": "note.due",
+          "direction": "ASC"
+        },
+        {
+          "property": "file.name",
+          "direction": "ASC"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "All projects",
+      "filters": "true",
+      "order": [
+        "file.name",
+        "note.status",
+        "note.kind",
+        "note.area",
+        "note.due",
+        "note.completed"
+      ],
+      "sort": [
+        {
+          "property": "note.due",
+          "direction": "ASC"
+        },
+        {
+          "property": "file.name",
+          "direction": "ASC"
+        }
+      ]
+    }
+  ]
+}

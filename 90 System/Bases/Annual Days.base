@@ -1,0 +1,26 @@
+{
+  "filters": {
+    "and": [
+      "file.ext == \"md\"",
+      "note.type == \"daily\"",
+      "file.inFolder(\"05 Journal/Daily\")",
+      "note.date && note.date.format(\"YYYY\") == this.year"
+    ]
+  },
+  "views": [
+    {
+      "type": "table",
+      "name": "Daily records",
+      "order": [
+        "file.name",
+        "note.date"
+      ],
+      "sort": [
+        {
+          "property": "note.date",
+          "direction": "ASC"
+        }
+      ]
+    }
+  ]
+}

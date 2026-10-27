@@ -1,0 +1,96 @@
+/* Signal: local styling for Obsidian's default theme. No external fonts. */
+body {
+  --font-text-theme: "Segoe UI", "Inter", system-ui, sans-serif;
+  --font-interface-theme: "Segoe UI", "Inter", system-ui, sans-serif;
+  --font-monospace-theme: "Cascadia Code", Consolas, monospace;
+  --file-line-width: 780px;
+  --line-height-normal: 1.65;
+  --h1-size: 1.85em;
+  --h2-size: 1.3em;
+  --h3-size: 1.1em;
+  --h1-weight: 650;
+  --h2-weight: 600;
+  --h3-weight: 600;
+  --heading-spacing: 1.65em;
+  --link-decoration: underline;
+  --link-external-decoration: underline;
+  --table-row-alt-background: var(--background-primary-alt);
+  --table-header-background: var(--background-secondary);
+  --table-header-weight: 600;
+  --checkbox-radius: 4px;
+}
+
+.theme-light {
+  --background-primary: #fafaf7;
+  --background-primary-alt: #f1f3ef;
+  --background-secondary: #eef1ed;
+  --background-secondary-alt: #e7ece7;
+  --background-modifier-border: #cbd4ce;
+  --background-modifier-border-hover: #a8b8ae;
+  --background-modifier-border-focus: #19645e;
+  --background-modifier-form-field: #ffffff;
+  --background-modifier-hover: #e4ebe5;
+  --text-normal: #26322e;
+  --text-muted: #52635a;
+  --text-faint: #626f67;
+  --text-accent: #19645e;
+  --text-accent-hover: #104d48;
+  --text-on-accent: #ffffff;
+  --interactive-accent: #19645e;
+  --interactive-accent-hover: #104d48;
+  --color-accent: #19645e;
+  --color-accent-1: #185c56;
+  --color-accent-2: #104d48;
+  --text-selection: #d6e8de;
+  --text-highlight-bg: #f4e6a7;
+  --code-background: #edf1ed;
+  --code-normal: #344d43;
+  --tag-color: #265f52;
+  --tag-background: #e0ebe3;
+  --tag-background-hover: #d3e3d8;
+  --h1-color: #243e34;
+  --h2-color: #315246;
+  --h3-color: #3a5146;
+}
+
+.theme-dark {
+  --background-primary: #1d2422;
+  --background-primary-alt: #242e29;
+  --background-secondary: #18201c;
+  --background-secondary-alt: #151c18;
+  --background-modifier-border: #3c4a41;
+  --background-modifier-border-hover: #64796a;
+  --background-modifier-border-focus: #9acdb8;
+  --background-modifier-form-field: #242e29;
+  --background-modifier-hover: #303e35;
+  --text-normal: #e7eee8;
+  --text-muted: #b2c1b6;
+  --text-faint: #9aafa0;
+  --text-accent: #9acdb8;
+  --text-accent-hover: #c1e5d5;
+  --text-on-accent: #18251d;
+  --interactive-accent: #9acdb8;
+  --interactive-accent-hover: #c1e5d5;
+  --color-accent: #9acdb8;
+  --color-accent-1: #add9c6;
+  --color-accent-2: #c1e5d5;
+  --text-selection: #365445;
+  --text-highlight-bg: #665627;
+  --code-background: #26332b;
+  --code-normal: #c0daca;
+  --tag-color: #b5d8c5;
+  --tag-background: #2c4234;
+  --tag-background-hover: #385442;
+  --h1-color: #e2eee5;
+  --h2-color: #b7d5c3;
+  --h3-color: #b1c9ba;
+}
+
+.signal-dashboard { --file-line-width: 1040px; }
+.markdown-rendered h2 {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+.markdown-rendered a,
+.cm-s-obsidian span.cm-link { text-underline-offset: 0.16em; }
+.markdown-rendered blockquote { border-inline-start-color: var(--text-accent); }
